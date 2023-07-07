@@ -87,7 +87,7 @@ export const getOnboardingStatePolling = ({
             lockedDevice: false,
           };
         } else {
-          // If an error is catched previously, and this error is "allowed",
+          // If an error was caught previously, and this error is "allowed",
           // the value from the observable is not a FirmwareInfo but an Error
           const allowedError = event as Error;
           return {

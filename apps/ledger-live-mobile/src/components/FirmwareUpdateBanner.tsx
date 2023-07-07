@@ -26,9 +26,10 @@ import Button from "./Button";
 import QueuedDrawer from "./QueuedDrawer";
 import InvertTheme from "./theme/InvertTheme";
 import { urls } from "../config/urls";
+import type { FirmwareUpdateProps } from "../screens/FirmwareUpdate";
 
 type FirmwareUpdateBannerProps = {
-  onBackFromUpdate?: () => void;
+  onBackFromUpdate?: FirmwareUpdateProps["onBackFromUpdate"];
 };
 
 const FirmwareUpdateBanner = ({ onBackFromUpdate }: FirmwareUpdateBannerProps) => {

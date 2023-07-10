@@ -1,6 +1,7 @@
 import React, { useCallback } from "react";
 import styled from "styled-components";
-import { Text, ProviderIcon } from "@ledgerhq/react-ui";
+import { Text } from "@ledgerhq/react-ui";
+import ProviderIcon from "~/renderer/components/ProviderIcon";
 import Box from "~/renderer/components/Box";
 import { ExchangeRate } from "@ledgerhq/live-common/exchange/swap/types";
 

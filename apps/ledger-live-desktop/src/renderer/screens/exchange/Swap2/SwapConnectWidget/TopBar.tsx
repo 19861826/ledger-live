@@ -1,7 +1,6 @@
 // FIXME: very similar to src/renderer/components/WebPlatformPlayer/TopBar.js
 
 import { getProviderName } from "@ledgerhq/live-common/exchange/swap/utils/index";
-import { ProviderIcon } from "@ledgerhq/react-ui";
 import React from "react";
 import { Trans } from "react-i18next";
 import { useSelector } from "react-redux";
@@ -10,6 +9,7 @@ import Box, { Tabbable } from "~/renderer/components/Box";
 import IconClose from "~/renderer/icons/Cross";
 import LightBulb from "~/renderer/icons/LightBulb";
 import IconReload from "~/renderer/icons/UpdateCircle";
+import ProviderIcon from "~/renderer/components/ProviderIcon";
 import { enablePlatformDevToolsSelector } from "~/renderer/reducers/settings";
 import { rgba } from "~/renderer/styles/helpers";
 import { WebviewTag } from "~/renderer/components/Web3AppWebview/types";

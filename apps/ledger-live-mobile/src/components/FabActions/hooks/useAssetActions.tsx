@@ -81,6 +81,7 @@ export default function useAssetActions({ currency, accounts }: useAssetActionsP
               id: "buy",
               label: t("exchange.buy.tabTitle"),
               Icon: iconBuy,
+              testId: "testIDBuyBtn",
               navigationParams: [
                 NavigatorName.Exchange,
                 {

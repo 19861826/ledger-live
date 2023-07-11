@@ -1,29 +1,29 @@
 import BigNumber from "bignumber.js";
-import { getEnv } from "@ledgerhq/live-common/env";
-import { NFTStandard, AnyMessage, Account } from "@ledgerhq/types-live";
-import { Transaction as EvmTransaction } from "@ledgerhq/coin-evm/lib/types";
+import {
+  Transaction as EthereumTransaction,
+  TransactionMode,
+} from "@ledgerhq/live-common/families/ethereum/types";
+import { Account, AnyMessage, NFTStandard } from "@ledgerhq/types-live";
 import { getEIP712FieldsDisplayedOnNano } from "@ledgerhq/evm-tools/message/EIP712/index";
-import { NftProperties, MessageProperties } from "../types";
+import { MessageProperties, NftProperties } from "../types";
+import { getEnv } from "@ledgerhq/live-env";
 
-export const getNftTransactionProperties = (transaction: EvmTransaction): NftProperties => ({
-  tokenId: transaction.nft?.tokenId || null,
-  contract: transaction.nft?.contract || null,
-  quantity: transaction.nft?.quantity || null,
+export const getNftTransactionProperties = (transaction: EthereumTransaction): NftProperties => ({
+  tokenId: transaction?.tokenIds?.[0] || null,
+  contract: transaction?.collection || null,
+  quantity: transaction?.quantities?.[0] || null,
 });
 
 export const injectNftIntoTransaction = (
-  transaction: EvmTransaction,
+  transaction: EthereumTransaction,
   nftProperties: Partial<NftProperties>,
   standard?: NFTStandard,
-): EvmTransaction => ({
+): EthereumTransaction => ({
   ...transaction,
-  mode: (standard ? standard.toLowerCase() : transaction.mode) as Lowercase<NFTStandard>,
-  nft: {
-    collectionName: transaction.nft?.collectionName ?? "",
-    contract: nftProperties?.contract ?? transaction.nft?.contract ?? "",
-    tokenId: nftProperties?.tokenId ?? transaction.nft?.tokenId ?? "",
-    quantity: nftProperties?.quantity ?? transaction.nft?.quantity ?? new BigNumber(NaN),
-  },
+  mode: standard ? (`${standard.toLowerCase()}.transfer` as TransactionMode) : transaction.mode,
+  collection: nftProperties?.contract ?? transaction?.collection ?? "",
+  tokenIds: [nftProperties?.tokenId ?? transaction.tokenIds?.[0] ?? ""],
+  quantities: [nftProperties?.quantity ?? transaction.quantities?.[0] ?? new BigNumber(NaN)],
 });
 
 export const getMessageProperties = async (

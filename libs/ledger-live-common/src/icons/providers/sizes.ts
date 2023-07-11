@@ -5,6 +5,7 @@ export const ProviderIconSizes = {
   M: 40,
   L: 48,
   XL: 56,
+  XXL: 60,
 };
 
 export type ProviderIconSize = keyof typeof ProviderIconSizes;

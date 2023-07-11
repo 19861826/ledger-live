@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 import { SvgUri } from "react-native-svg";
-import { ProviderIconSize, ProviderIconSizes } from "@ledgerhq/ui-shared";
+import { ProviderIconSize, ProviderIconSizes } from "@ledgerhq/live-common/icons/providers/sizes";
 
 type StyledIconProps = {
   size: ProviderIconSize;

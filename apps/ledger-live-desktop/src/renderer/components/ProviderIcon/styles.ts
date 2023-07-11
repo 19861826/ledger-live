@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ProviderIconSize, ProviderIconSizes } from '@ledgerhq/ui-shared'
+import { ProviderIconSize, ProviderIconSizes } from "@ledgerhq/live-common/icons/providers/sizes";
 
 type StyledIconProps = {
   size: ProviderIconSize;

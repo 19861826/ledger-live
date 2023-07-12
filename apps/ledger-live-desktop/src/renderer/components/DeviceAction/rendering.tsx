@@ -889,7 +889,7 @@ export const renderSwapDeviceConfirmation = ({
               ),
               provider: (
                 <Box horizontal alignItems="center" style={{ gap: "6px" }}>
-                  <ProviderIcon size="XXS" name={exchangeRate.provider.toLowerCase()} />
+                  <ProviderIcon size="XXS" name={exchangeRate.provider} />
                   <Text>{providerName}</Text>
                 </Box>
               ),

@@ -286,7 +286,7 @@ export function renderConfirmSwap({
           <FieldItem title={t("DeviceAction.swap2.provider")}>
             <Flex flexDirection="row" alignItems="center">
               <Flex paddingRight={2}>
-                <ProviderIcon size="XXS" name={exchangeRate.provider.toLowerCase()} />
+                <ProviderIcon size="XXS" name={exchangeRate.provider} />
               </Flex>
 
               <Text>{providerName}</Text>

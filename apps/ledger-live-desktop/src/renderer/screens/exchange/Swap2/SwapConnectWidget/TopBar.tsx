@@ -112,7 +112,7 @@ const TopBar = ({ provider, onClose, webviewRef }: Props) => {
   return (
     <Container>
       <TitleContainer>
-        <ProviderIcon size="XXS" name={provider.toLowerCase()} />
+        <ProviderIcon size="XXS" name={provider} />
         <ItemContent>{name}</ItemContent>
       </TitleContainer>
       <Separator />

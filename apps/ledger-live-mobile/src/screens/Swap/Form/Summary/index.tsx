@@ -176,7 +176,7 @@ export function Summary({ provider, swapTx: { swap, status, transaction }, kyc }
         <Flex flexDirection="row" alignItems="center">
           <StatusTag kyc={kyc} />
           <Flex paddingRight={2}>
-            <ProviderIcon size="XXS" name={provider.toLowerCase()} />
+            <ProviderIcon size="XXS" name={provider} />
           </Flex>
 
           <Text>{name}</Text>

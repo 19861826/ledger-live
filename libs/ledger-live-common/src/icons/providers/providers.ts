@@ -8,5 +8,5 @@ type GetProviderIconUrlProps = {
 
 export const getProviderIconUrl = ({ cdn = CDN_URL, name, boxed }: GetProviderIconUrlProps) => {
   const iconType = boxed ? "boxed" : "default";
-  return `${cdn}/icons/providers/${iconType}/${name}.svg`;
+  return `${cdn}/icons/providers/${iconType}/${name.toLowerCase()}.svg`;
 };

@@ -92,7 +92,7 @@ export function SelectProvider({ navigation, route }: SelectProviderParamList) {
                 borderColor={isSelected ? "primary.c70" : "neutral.c30"}
               >
                 <Flex flexDirection="row" alignItems="center">
-                  <ProviderIcon size="XS" name={rate.provider.toLowerCase()} />
+                  <ProviderIcon size="XS" name={rate.provider} />
                   <Flex marginLeft={4}>
                     <Text variant="large" paddingBottom={2}>
                       {getProviderName(rate.provider)}

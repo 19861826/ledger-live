@@ -28,7 +28,7 @@ export default class PortfolioPage {
     await openDeeplink(baseLink);
   }
 
-  async openMaketPage() {
+  async openMarketPage() {
     await tapByElement(this.marketTabButton());
   }
 }

@@ -60,7 +60,7 @@ function Rate({
     >
       {icon && (
         <Box mr={2}>
-          <ProviderIcon size="S" name={icon} />
+          <ProviderIcon size="S" name={icon} boxed={true} />
         </Box>
       )}
       <Box flex={1}>
